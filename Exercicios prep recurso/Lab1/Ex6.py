@@ -1,0 +1,6 @@
+print ("Qual a taxa?")
+taxa = input()
+print ("Qual a quantia em euros?")
+quantia = input()
+quantiaXYZ = float(quantia)/float(taxa)
+print (quantia, " Euros são ",quantiaXYZ, " XYZ")

@@ -1,3 +1,20 @@
+def Trocar():
+
+    caracteresEspeciais = "áãéíó"
+    caracterNormais = "aaeio"
+    global nome
+    novoNome = ""
+    tamanho = len(nome)
+
+    for i in range(0, tamanho):
+        onde = caracteresEspeciais.find(nome[i])
+        if onde == -1:
+            novoNome += nome[i]
+        else:
+            novoNome += caracterNormais[onde]
+        nome = novoNome
+
+
 nrPessoas = 0
 somaIdades = 0
 maxIdade = 0
@@ -5,22 +22,13 @@ nrInfantil = 0
 nrAdultos = 0
 nrSeniores = 0
 
-caracteresEspeciais = [["a","á","â","à"],["e","é"],["i","í","î"],["o","ó","õ","ô"],["u","ú"]]
+caracteresEspeciais = "áãâéíóõú"
+caracterNormais = "aaaeioou"
 
 nome = input("Qual o 1º nome? (fim para terminar)")
 
 while nome != "fim":
-    novoNome = ""
-    for i in range (0,len(nome)):
-        caracter = nome[i]
-
-        for j in range (0,len(caracteresEspeciais)):
-            if caracter in caracteresEspeciais[j]:
-                novoNome += caracteresEspeciais[j][0]
-            else:
-                novoNome += caracter
-    nome = novoNome
-
+    Trocar()
     nrPessoas += 1
     print("Qual a idade do ", nome)
     idade = int(input())
